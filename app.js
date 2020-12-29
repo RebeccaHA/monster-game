@@ -16,6 +16,9 @@ const app = Vue.createApp({
     },
     updatedPlayerHealth() {
       return { width: this.playerHealth + "%" };
+    },
+    threeRounds() {
+      return this.currentRound % 3 !== 0;
     }
   },
   methods: {
@@ -34,7 +37,6 @@ const app = Vue.createApp({
       this.monsterHealth -= attackValue;
       this.attackPlayer();
       this.currentRound += 1;
-      console.log(this.currentRound);
     }
   }
 });
