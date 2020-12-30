@@ -7,7 +7,8 @@ const app = Vue.createApp({
     return {
       monsterHealth: 100,
       playerHealth: 100,
-      currentRound: 0
+      currentRound: 0,
+      winner: null
     };
   },
   computed: {
@@ -19,6 +20,13 @@ const app = Vue.createApp({
     },
     threeRounds() {
       return this.currentRound % 3 !== 0;
+    }
+  },
+  watchers: {
+    monsterHealth(value) {
+      if (value <= 0 && this.playerHealth <= 0) {
+        this.winner = "draw";
+      }
     }
   },
   methods: {
@@ -45,6 +53,8 @@ const app = Vue.createApp({
       } else {
         this.playerHealth += healValue;
       }
+      this.currentRound += 1;
+      this.attackPlayer();
     }
   }
 });
