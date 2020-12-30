@@ -27,14 +27,14 @@ const app = Vue.createApp({
       if (value <= 0 && this.playerHealth <= 0) {
         this.winner = "draw";
       } else if (value <= 0) {
-        this.winner = "player";
+        this.winner = "Player";
       }
     },
     playerHealth(value) {
       if (value <= 0 && this.monsterHealth <= 0) {
-        this.winner = "draw";
+        this.winner = "Draw";
       } else if (value <= 0) {
-        this.winner = "monster";
+        this.winner = "Monster";
       }
     }
   },
