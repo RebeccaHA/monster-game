@@ -22,10 +22,19 @@ const app = Vue.createApp({
       return this.currentRound % 3 !== 0;
     }
   },
-  watchers: {
+  watch: {
     monsterHealth(value) {
       if (value <= 0 && this.playerHealth <= 0) {
         this.winner = "draw";
+      } else if (value <= 0) {
+        this.winner = "player";
+      }
+    },
+    playerHealth(value) {
+      if (value <= 0 && this.monsterHealth <= 0) {
+        this.winner = "draw";
+      } else if (value <= 0) {
+        this.winner = "monster";
       }
     }
   },
