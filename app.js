@@ -13,9 +13,15 @@ const app = Vue.createApp({
   },
   computed: {
     updatedMonsterHealth() {
+      if (this.monsterHealth <= 0) {
+        return { width: "0%" };
+      }
       return { width: this.monsterHealth + "%" };
     },
     updatedPlayerHealth() {
+      if (this.playerHealth <= 0) {
+        return { width: "0%" };
+      }
       return { width: this.playerHealth + "%" };
     },
     threeRounds() {
