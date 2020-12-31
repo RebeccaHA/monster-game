@@ -37,16 +37,20 @@
         <button @click="startGame">Start new game</button>
       </section>
       <section v-else id="controls">
-        <button @click="attackMonster">ATTACK</button>
-        <button @click="specialAttack" :disabled="threeRounds">
+        <button @click="attackMonster" id="attack">ATTACK</button>
+        <button @click="specialAttack" id="special" :disabled="threeRounds">
           SPECIAL ATTACK
         </button>
-        <button @click="healPlayer">HEAL</button>
-        <button @click="surrender">SURRENDER</button>
+        <button @click="healPlayer" id="heal">HEAL</button>
+        <button @click="surrender(); battleLog($event)" id="surrender">
+          SURRENDER
+        </button>
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
-        <ul></ul>
+        <ul v-for="battleText in battleTexts" :key="index">
+          <li>{{battleText}}</li>
+        </ul>
       </section>
     </div>
   </body>

@@ -8,7 +8,8 @@ const app = Vue.createApp({
       monsterHealth: 100,
       playerHealth: 100,
       currentRound: 0,
-      winner: null
+      winner: null,
+      battleTexts: []
     };
   },
   computed: {
@@ -79,6 +80,11 @@ const app = Vue.createApp({
     },
     surrender() {
       this.winner = "Monster";
+    },
+    battleLog(e) {
+      if (e.target.id === "surrender") {
+        this.battleTexts.push("The player surrendered");
+      }
     }
   }
 });
