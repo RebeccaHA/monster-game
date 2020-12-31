@@ -76,6 +76,9 @@ const app = Vue.createApp({
       }
       this.currentRound += 1;
       this.attackPlayer();
+    },
+    surrender() {
+      this.winner = "Monster";
     }
   }
 });
