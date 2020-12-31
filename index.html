@@ -34,6 +34,7 @@
         <h3 v-if="winner === 'Monster'">Monster wins!</h3>
         <h3 v-else-if="winner === 'Player'">Player wins!</h3>
         <h3 v-else>Draw!</h3>
+        <button @click="startGame">Start new game</button>
       </section>
       <section id="controls">
         <button @click="attackMonster">ATTACK</button>
