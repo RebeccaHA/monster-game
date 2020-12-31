@@ -45,6 +45,12 @@ const app = Vue.createApp({
     }
   },
   methods: {
+    startGame() {
+      (this.winner = null),
+        (this.playerHealth = 100),
+        (this.monsterHealth = 100);
+      this.currentRound = 0;
+    },
     attackMonster() {
       const attackValue = randomNumber(5, 12);
       this.monsterHealth -= attackValue;
