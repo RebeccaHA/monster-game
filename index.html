@@ -52,8 +52,11 @@
         <h2>Battle Log</h2>
         <ul>
           <li v-for="battleText in battleTexts">
-            {{battleText.actionPlayer}} - {{battleText.actionType}} -
-            {{battleText.actionValue}}
+            <span
+              :class="{'log--player': battleText.actionPlayer === 'player', 'log--monster': battleText.actionPlayer === 'monster'}"
+              >{{battleText.actionPlayer}}</span
+            >
+            - {{battleText.actionType}} - {{battleText.actionValue}}
           </li>
         </ul>
       </section>
