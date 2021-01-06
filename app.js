@@ -87,7 +87,7 @@ const app = Vue.createApp({
       this.winner = "Monster";
     },
     battleLog(player, type, value) {
-      this.battleLog.unshift({
+      this.battleTexts.unshift({
         actionPlayer: player,
         actionType: type,
         actionValue: value
