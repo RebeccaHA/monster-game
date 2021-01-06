@@ -84,13 +84,13 @@ const app = Vue.createApp({
     },
     battleLog(e) {
       if (e.target.id === "surrender") {
-        this.battleTexts.push("The player surrendered");
+        this.battleTexts.unshift("The player surrendered");
       } else if (e.target.id === "heal") {
-        this.battleTexts.push("The player healed themselve");
+        this.battleTexts.unshift("The player healed themselve");
       } else if (e.target.id === "attack") {
-        this.battleTexts.push("The player attacked the monster");
+        this.battleTexts.unshift("The player attacked the monster");
       } else if (e.target.id === "special") {
-        this.battleTexts.push("The player used special attack");
+        this.battleTexts.unshift("The player used special attack");
       }
     }
   }
